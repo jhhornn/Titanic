@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titapp</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: blueviolet;
+            padding: .5rem 0 .5rem 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        input {
+            margin-bottom: 1rem;
+            width: 100%;
+            height: 1.8rem;
+            padding: .2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Titanic Survival Prediction app</h2>
+    </header>
+    <form method="POST">
+        <label for="pclass">Ticket type</label>
+        <input type="number" placeholder="1st class=1, 2nd class=2, 3rd class=3" name="pclass" required>
+        <label for="sex">Gender</label>
+        <input type="number" placeholder="male=1 female=0" name="sex" required>
+        <label for="age">Age</label>
+        <input type="number" placeholder="age" name="age" required>
+        <label for="sibsp">No of siblings</label>
+        <input type="number" placeholder="number of siblings" name="sibsp" required>
+        <label for="parch">No. of parents with kids onboard</label>
+        <input type="number" placeholder="number of parents with their kids onboard" name="parch" required>
+        <label for="fare">Ticket price in dollars</label>
+        <input type="number" placeholder="fare" name="fare" required>
+        <label for="embarked">Origin</label>
+        <input type="number" placeholder="southampton=2 cherbourg=0 queenstown=1" name="embarked" required>
+        <!--<input type="number" placeholder="who" name="who">-->
+        <input type="submit" value="Submit">
+    </form>
+
+    {% block output %} {% if output %}
+    <h1>{{output}}</h1>
+    {% endif %} {% endblock %}
+</body>
+
+</html>
